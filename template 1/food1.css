@@ -1,0 +1,306 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color:white;
+}
+.temp{
+    margin: 0;
+    padding: 0;
+}
+.temp1{
+    margin: 0;
+    padding: 0;
+    background: transparent url(pasta4_b294.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    position: relative;
+}
+.temp1 > .nav_button{
+    text-align: center;
+}
+.temp1 > .navigation{
+    background-color: teal;
+    width: 190px;
+    height: 570px;
+    display: inline-block;
+}
+.temp1 > .navigation > ul > li{
+    list-style: none;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+.temp1 > .navigation > ul > li > a{
+    text-decoration: none;
+    color: #293B5F;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.temp1 > .navigation > ul > li > a:hover{
+    color: red;
+    border: 5px solid black;
+    background-color: #F5F7B2;
+} 
+
+.temp1 > .centered{
+    
+    margin-left: 150px;
+    display: inline-block;
+    width: 600px;
+}
+
+.temp1 > .centered > .salad > h1{
+    font-size: 5rem;
+    color: seashell;
+    
+}
+
+.temp1 > .centered > .salad1 > h3{
+    font-size: 1.5rem;
+    color: seashell;
+    margin-top: -50px;
+}
+.temp1 > .centered > .salad2 > p {
+    color: seashell;
+}
+
+.temp2{
+    padding-top: 40px;
+    padding-left: 150px;
+    background: #87A8A4;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.temp2 > .menu{
+    margin-bottom: -30px;
+}
+.temp2 > .menu1{
+    margin-bottom: -20px;
+}
+.temp2 > .menu > h4{
+    font-weight: lighter;
+}
+
+.temp2 > .menu1 > h1 {
+
+    font-size: 3rem;
+}
+.temp2 > .order{
+    padding-bottom: 80px;
+}
+.temp2 > .order > .order1 {
+    display: inline-block;
+    width: 500px;
+}
+.temp2 > .order > .order2 {
+    display: inline-block;
+    width: 500px;
+}
+
+.temp2 > .order > .order1 > .order1_1 {
+    font-size: x-small;
+}
+.temp2 > .order > .order2 > .order2_2 {
+    font-size: x-small;
+}
+
+.temp3{
+    background-color: gray;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.temp3 > .caesar1 {
+    display: inline-block;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.caesar1_1_1{
+    display: inline-block;
+}
+.temp3 > .caesar2 {
+    display: inline-block;
+    padding-left: 100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.caesar2_2_2{
+    display: inline-block;
+}
+.iamages1{
+    width: 200px;
+    height: 200px;
+}
+.images2{
+    width: 100%;
+    height: 400px;
+}
+
+.temp4 > .lasagnia{
+    margin-top: -100px;
+    padding-bottom: 80px;
+}
+.temp4 > .lasagnia > .lasagnia1{
+    display: inline-block;
+    margin-left: 250px;
+    padding-left: 10px;
+    background-color: honeydew;
+    padding-right: 10px;
+}
+.temp4 > .lasagnia > .lasagnia1 > .lasagnia1_1{
+    font-size: x-small;
+}
+.temp4 > .lasagnia > .lasagnia2 > .lasagnia2_2{
+    font-size: x-small;
+}
+.temp4 > .lasagnia > .lasagnia2{
+    display: inline-block;
+    padding-left: 10px;
+    background-color: honeydew;
+    padding-right: 10px;
+}
+
+.temp5 > .snacks{
+    display: inline-block;
+    margin-left: 150px;
+    padding-bottom: 50px;
+    vertical-align: top;
+
+}
+.temp5 > .snacks > h1{
+    font-size: 3rem;
+    font-family: sans-serif;
+    padding-bottom: 70px;
+    padding-top: -100px;
+}
+.temp5 > .snacks > p {
+    line-height: 30px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    padding-bottom: 50px;
+}
+.snacks1 {
+    display: block;
+    width: 300px;
+    height: 15px;
+    background-color: yellow;
+    margin-bottom: 70px
+}
+.snacks2 {
+    display: inline-block;
+    padding-left: 50px;
+
+}
+.images3{
+    width: 650px;
+    height: 600px;
+}
+.temp6{
+   
+    text-align: center;
+    color: #2C394B;
+}
+.images4{
+    width: 100%;
+    height: 100%;
+}
+.temp6 > h1{
+    font-size: 3rem;
+    margin-top: -400px;
+}
+.temp6 > p{
+    font-size: x-small;
+    
+}
+.temp7{
+    text-align: center;
+    margin-top: 280px;
+}
+.temp7 > .port {
+    border: 15px solid yellow;
+    border-radius:150px ;
+    display: inline-block;
+    
+}
+.temp7 > p{
+    color: darkslateblue;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.temp7 > h4 {
+    color: darkslateblue;
+}
+.temp8{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+.temp8 > h1{
+    font-size: 3rem;
+    font-family:sans-serif;
+    color: #2C394B;
+}
+.temp8 > p{
+    color: #2C394B;
+    font-size: x-small;
+}
+.temp8 > p > a {
+    color: orange;
+}
+.temp8 > form > input {
+    width: 500px;
+    height: 40px;
+    border: 4px solid orange;
+    border-radius: 20px;
+}
+.temp8 > form > input:focus{
+    width: 600px;
+    height: 60px;
+    background-color: #055052;
+    box-sizing: border-box;
+    box-shadow: 50px black;
+}
+.temp8 > form > input > ::placeholder{
+    letter-spacing: 2px;
+    margin: 10px;
+}
+.temp8 > form > button {
+    width: 500px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: orange;
+    margin-top: 20px;
+}
+
+.temp8 > form > button:hover{
+    width: 800px;
+    height: 60px;
+    background-color: teal;
+}
+
+.temp9{
+    background-color: #2C394B;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    color: white;
+}
+.temp9 > p {
+    padding-top: 40px;
+    font-size: x-small;
+    padding-bottom: 85px;
+}
+.temp9 > .spa1 {
+    vertical-align: bottom;
+} 
+.temp9 > .spa1 > a {
+    color: white;
+    font-size: x-small;
+}
+.temp9 > .spa1 > a >.spa{
+    text-decoration: none;
+}
