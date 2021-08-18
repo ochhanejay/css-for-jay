@@ -2,6 +2,12 @@
     <head>
         <title> FOOD CORPORATION</title>
         <link rel="stylesheet" href="food1.css">
+        <script>
+            function myslide()
+            {
+                document.getElementById("slidebar").classList.toggle('active');
+            }
+         </script>
 
     </head>
     <body>
@@ -9,6 +15,12 @@
             <div class="temp1">
                 
                 <div class="navigation">
+                    <div class="toggle" onclick="myslide()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+        
+                    </div>
                     <ul>
                         <li><a href="#">Home </a> </li>
                         <li><a href="#">About</a> </li>
@@ -188,8 +200,8 @@
                     <p>Sample text. Click to select the text box. Click again or double <br>
                          click to start editing the text.</p>
                      <div class="spa1">
-                         <a href="#"> HTML Templates <span class="spa">created with</span>
-                        Website Builder Software </a>
+                        <p> <a href="#"> HTML Templates </a> centered with <a href="#">
+                        Website Builder Software </a></p>
                     </div>
                         
                 </div>

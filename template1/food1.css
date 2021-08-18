@@ -7,6 +7,25 @@ body{
     padding: 0;
     background-color:white;
 }
+.navigation > .toggle{
+    position: absolute;
+    left: 230px;
+    top: 20px;
+}
+.navigation >.toggle > span{
+    width: 30px;
+    height: 5px;
+    background-color:white;
+    display: block;
+    margin: 5px 0px;
+}
+.navigation .active{
+    left: 0;
+
+}
+.navigation ul li:hover{
+    background-color: darkgrey;
+}
 .temp{
     margin: 0;
     padding: 0;
@@ -296,11 +315,14 @@ body{
 }
 .temp9 > .spa1 {
     vertical-align: bottom;
+    
 } 
-.temp9 > .spa1 > a {
+.temp9 > .spa1 > p >a {
     color: white;
     font-size: x-small;
+    padding-right: 5px;
+    padding-left: 5px;
 }
-.temp9 > .spa1 > a >.spa{
+.temp9 > .spa1 > p{
     text-decoration: none;
 }
