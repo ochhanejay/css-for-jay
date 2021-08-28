@@ -1,0 +1,16 @@
+html{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font: 8pt/16pt georgia,sans-serif;
+	text-align: center;
+	color: #464128;
+	background: transparent url(http://www.csszengarden.com/013/coastal2.jpg) no-repeat bottom center;
+	margin: 0px;
+}
+
+p{
+	background-color: transparent;
+	text-align: right;
+}
