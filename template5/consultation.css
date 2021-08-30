@@ -5,6 +5,9 @@ html{
 body{
     margin: 0;
     padding: 0;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
 }
 .header{
     display: flex;
@@ -713,6 +716,7 @@ body{
         margin-top: -150px;
         position: absolute;
     }
+<<<<<<< HEAD
     .cont62 >h1{
         font-size: 0.5rem;
     }
@@ -807,3 +811,18 @@ body{
             color: wheat;
         }
 }
+=======
+}
+.container8{
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    font-size: x-small;
+}
+.container8 > p >a{
+    color: wheat;
+}
+>>>>>>> 40e9bd592ead0f2834251c2acae7f33ad3652d0c
