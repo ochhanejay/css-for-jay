@@ -24,11 +24,25 @@
             pic.height=txtRange*100;
 
         }
+        function bodyload(){
+            for(var item of categories){
+                var option=document.createElement  ('option');
+                option.text=item;
+                option.value=item;
+                document.getElementById('lstProducts').appendChild(option);
+            }
+            // var category=document.getElementById('lstProducts').value;
+            // var product= document.getElementById('lstProducts');
+            // product.data
+
+        }
+        var searchResult=[];
         function productChanged(){
-            var 
-            var category=document.getElementById('lstProducts').value;
-            var product= document.getElementById('lstProducts');
-            product.data
+            var productName=document.getElementById('box');
+            searchResult=data.filter(function(item){return item.Name==productName});
+            // document.getElementById('txtName').innerHTML=searchResult[0].Name;
+            // document.getElementById('pic').src=searchResult[0].Photo;
+            document.getElementById('prodName').innerHTML=searchResult[0].Name;
 
         }
     </script>
@@ -42,7 +56,7 @@
     </style>
     
 </head>
-<body class="container-fluid">
+<body class="container-fluid" onload="bodyload()">
     <div class="form-group">
         <label for="">Select Products</label>
     <div>
@@ -54,7 +68,8 @@
 
     </div>
     <div id="box">
-        <img id='pic' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSyNx8VFTaRBvTQ0HcBGcpkihbuhVBp9VtCA&usqp=CAU" width="100" height="100">
+        <h2 id="prodName"></h2>
+        <img id='pic' width="100" height="100">
     </div>
     
 </body>
