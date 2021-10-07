@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+    "use strict"
+    function bodyload() {
+            // window.document.images[1].src="IMG_20171203_214640.jpg" ;
+            // window.document.forms[0].elements[3].value="Submit";
+            // window.document.forms[1].elements[0].value="login";
+            // pic.src="IMG_20171203_214640.jpg";
+            // data.src="IMG_20171203_214640.jpg";
+            // frmhome.btn1.value="Submit";
+            // frmhome1.btn2.value="login";
+            document.getElementById("pic").src="IMG_20171203_214640.jpg";
+            document.getElementById("data").src="IMG_20171203_214640.jpg";
+            document.getElementById("btn1").value="login";
+            document.getElementById("btn2").value="submit";
+            // var x= document.getElementsByTagName("form");
+            // alert("Total no. of form's =" +x.length);
+            // var x= document.getElementsByClassName("container")
+            // alert("Total no. of container="+x.length);
+            // var x= document.getElementsByName("pay")
+            // alert("Total no. payment methods="+x.length);
+        }
+        function Deleteclick (){
+            // alert("data deleted permanently");
+            // var x= confirm("are you sure you want to delete")
+            // if(x==true){
+            //     alert("record deleted")
+            // }
+            // else{
+            //     alert("cancelled")
+            // }
+            var x= confirm("are you sure you want to delete")
+            if(x==true){
+                document.getElementById("msg").innerHTML="record deleted successfully"
+            }
+            else{
+                document.getElementById("msg").outerHTML="action cancelled"
+            }
+
+        }
+
+    </script>
+</head>
+<body class="container" onload="bodyload ()">
+    <div>
+        <img id="pic" Name=pic width="300px" height="300px" alt="bala">
+
+        <img id="data" name=data width="100px" height="100px" alt="none">
+    </div>
+    <form name="frmhome">
+        Name:
+        <input type="text">
+        Password:
+        <input type="text">
+        email:
+        <input type="text">
+        <input id="btn1" name="btn1" class="btn btn-success" type="button">
+    </form>
+    <form name="frmhome1">
+        <input id="btn2" name="btn2" class="btn btn-primary" type="button">
+        
+    </form>
+    <fieldset>
+        <legend>Payment Methods</legend>
+        <input type="radio" name="pay"> cod
+        <input type="radio" name="pay"> credit card
+        <input type="radio" name="pay"> through upi
+    </fieldset>
+    <button onclick="Deleteclick()" type="button " class="btn btn-danger"> Delete </button>
+    <h2 id="msg"></h2>
+
+    
+</body>
+</html>

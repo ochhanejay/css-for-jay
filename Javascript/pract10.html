@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image zoomer</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+        var data =[
+            {Name:"Earpods", Price:4500.55, Photo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSyNx8VFTaRBvTQ0HcBGcpkihbuhVBp9VtCA&usqp=CAU"},
+            {Name:"JBL Speaker", Price:6000.55, Photo:"https://www.jbl.com/on/demandware.static/-/Sites-masterCatalog_Harman/default/dwf687ad0f/JBL_Flip4_Black_Hero.png"},
+            {Name:"Shirt", Price:2000.33, Photo:"https://w7.pngwing.com/pngs/972/557/png-transparent-blue-dress-shirt-t-shirt-dress-shirt-dress-shirt-tshirt-blue-image-file-formats-thumbnail.png"},
+            {Name:"Jeans", Price:3000.44, Photo:"https://5.imimg.com/data5/XS/OK/MY-33004082/stylish-mens-jeans-500x500.jpg"}
+        
+        ];
+        var categories=['Select a Product','Earpods','JBL Speaker','Shirt','Jeans'];
+        function zoom(){
+            var pic=document.getElementById('pic');
+            var txtRange= document.getElementById('txtRange').value;
+            pic.width=txtRange*100;
+            pic.height=txtRange*100;
+
+        }
+        function productChanged(){
+            var category=document.getElementById('lstProducts').value;
+            var product= document.getElementById('lstProducts');
+            product.data
+
+        }
+    </script>
+    <style>
+        #box{
+            /* margin: auto;
+            justify-content: center;
+            align-items: center; */
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body class="container-fluid">
+    <div class="form-group">
+        <label for="">Select Products</label>
+    <div>
+        <select onchange="productChanged()" name="" class="form-control"  id="lstProducts"></select>
+    </div>
+    </div>
+    <div id="box">
+       100% <input type="range" id="txtRange" min="1" max="5" value="1" onchange="zoom()">500%
+
+    </div>
+    <div id="box">
+        <img id='pic' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSyNx8VFTaRBvTQ0HcBGcpkihbuhVBp9VtCA&usqp=CAU" width="100" height="100">
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,92 @@
+<script>
+    function foo(){
+         var product = {
+            name: '',
+            price: 0,
+            isInStock: true,
+            qty: 0,
+            shippedTo: [ ],
+            total: function(){
+                return this.price*this.qty;
+            },
+            print:function(){
+                document.write(
+                    `<dl>
+                        <dt>Name</dt> <dd>${this.name} </dd>
+                        <dt>Price</dt> <dd>${this.price} </dd>
+                        <dt>Stock Availability</dt> <dd>${(this.isInStock==true)?"Available":"Out of Stock"} </dd>
+                        <dt>Quantity</dt> <dd>${this.qty} </dd>
+                        <dt>Shipped To</dt> <dd>${this.shippedTo.toString()} </dd>
+                        <dt>Total</dt> <dd>${this.total()} </dd>
+                        </dl>`)
+                
+            }
+        }
+        
+        product.name= 'Samsung tv';
+        product.price= 50000;
+        // product.isInStock=true;
+        product.qty=5;
+        product.shippedTo=['Delhi','Indore'];
+       
+        if(product.qty==0){
+            product.isInStock=false;
+        }
+        else{
+            product.isInStock=true;
+        }
+        product.print();
+
+        product.name= 'Microwave';
+        product.price= 5000;
+        // product.isInStock=false;
+        product.qty=0;
+        product.shippedTo=["Delhi","Gurugram","Indore"];
+        
+        if(product.qty==0){
+            product.isInStock=false;
+        }
+        else{
+            product.isInStock=true;
+        }
+        product.print();
+
+        product.name= 'Air conditioner';
+        product.price= 100000;
+        // product.isInStock=true;
+        product.qty=4;
+        product.shippedTo=["Delhi","Gurugram","Indore"];
+        
+        if(product.qty==0){
+            product.isInStock=false;
+        }
+        else{
+            product.isInStock=true;
+        }
+        product.print();
+
+       
+    }
+    foo();
+</script>
+<style>
+    dl{
+        width: 400px;
+        border: 5px solid darkcyan;
+        box-shadow: black;
+        border-radius: 20px;
+        padding: 20px;
+        margin: auto;
+        margin-bottom: 50px;
+
+    }
+    dt{
+        background-color: black;
+        color: wheat;
+        font-size: 2.5rem;
+    }
+    dd{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+</style>

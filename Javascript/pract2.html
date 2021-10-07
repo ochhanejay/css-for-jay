@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript">
+    "use strict"
+    function RegisterClick() {
+            var name = document.getElementById('txtName').value;
+            var price = document.getElementById('txtPrice').value;
+            document.getElementById('lblName').innerHTML = name;
+            document.getElementById('lblPrice').innerHTML = price;
+            var available = document.getElementById("available").checked;
+            var outofstock= document.getElementById("notAvailable").checked;
+            
+            if(available==true){
+                document.getElementById("lblStock").innerHTML = "stock available";
+            }
+            else if(outofstock==false){
+                document.getElementById("lblStock").innerHTML = "please select the availability";
+
+            }
+            else {
+                
+                document.getElementById("lblStock").innerHTML = "out of stock";
+            }
+           
+
+            var shippingCity = document.getElementById('shipment').value;           
+            document.getElementById("lblShippedTo").innerHTML = shippingCity;
+        }
+
+    </script>
+    <style>
+        .product{
+            width: 300px;
+            height: auto;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 4px 6px darkcyan;
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid darkcyan;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="product">
+        <div class="formgroup">
+            <label > NAME</label>
+            <div>
+                <input type="text" id="txtName" class="form-control">
+            </div>
+        </div>
+        <div class="formgroup">
+            <label > Price</label>
+            <div>
+                <input type="text" id="txtPrice" class="form-control">
+            </div>
+        </div>
+        <div class="formgroup">
+            <label > IS IN STOCK</label>
+            <div>
+                <input id="available" type="radio" name="stock" value="IN stock available"> Yes
+                <input id="notAvailable" type="radio" name="stock" value="out of stock"> No
+            </div>
+        </div>
+        <div class="formgroup">
+            <label > Shipped To</label>
+            <div>
+                <select name="" id="shipment" class="form-control">
+                    <option value="Select">select</option>
+                    <option value="Indore">indore</option>
+                    <option value="Delhi">delhi</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <button onclick="RegisterClick()" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#productDetailsModal">Register Product</button>
+        </div>
+    </div>
+    <div class="modal" id="productDetailsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title"> Prodcut details</h2>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td id="lblName"></td>
+                            </tr>
+                            <tr>
+                                <td>Price</td>
+                                <td id="lblPrice"></td>
+                            </tr>
+                            <tr>
+                                <td>Stock</td>
+                                <td id="lblStock"></td>
+                            </tr>
+                            <tr>
+                                <td>Shipped To</td>
+                                <td id="lblShippedTo"></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" data-bs-dismiss="modal" >OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

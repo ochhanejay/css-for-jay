@@ -1,0 +1,43 @@
+@media  (min-device-width:320px) and (max-device-width:480px){
+
+    body{
+        margin: 0px;
+        padding: 0px;
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* background-color: blue; */
+    }
+#head{
+   /* justify-content: center; */
+   /* text-align: center; */
+   flex-direction: column;
+   margin-left: -80px;
+
+   padding: 0px;
+   /* height: 100vh; */
+    
+   
+}
+#head img{
+   
+    margin: 0px;
+    padding: 0px;
+    
+}
+.fill1{
+   margin-left:20px ;
+   text-align: unset !important;
+}
+.text{
+    
+    margin-right: -60px;
+    
+}
+.fill1  h2{
+    /* font-size: 5px; */
+    /* w
+    idth: 10%; */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+}

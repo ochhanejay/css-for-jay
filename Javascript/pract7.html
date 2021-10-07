@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC FOOD</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+        function GetTime(){
+            var now = new Date();
+            document.getElementById('timer').innerHTML=now.toLocaleTimeString();
+        }
+        function f1(){
+            setInterval(GetTime,1000)
+        }
+        function BillSummary(){
+                var txtName= document.getElementById('txtName');
+                var txtMobile= document.getElementById('txtMobile');
+                var txtMail= document.getElementById('txtMail');
+
+                var optBurger= document.getElementById('optBurger');
+                var optFries= document.getElementById('optFries');
+                var optCoffee= document.getElementById('optCoffee');
+                var optLollipop= document.getElementById('optLollipop');
+
+                var optBurgers= document.getElementById('optBurgers');
+                var optFriess= document.getElementById('optFriess');
+                var optCoffees= document.getElementById('optCoffees');
+                var optLollipops= document.getElementById('optLollipops');
+
+                var customerName= txtName.value;
+                var mobileNumber= txtMobile.value;
+                var mealName="";
+                var addOnName="";
+                var mealCost=0;
+                var addOnCost=0;
+                var total=0;
+
+                if(optBurger.checked){
+                    mealName=optBurger.value;
+                    mealCost=150;
+                }
+                if(optFries.checked){
+                    mealName=optFries.value;
+                    mealCost=100;
+                }
+                if(optCoffee.checked){
+                    mealName=optCoffee.value;
+                    mealCost=75;
+                }
+                if(optLollipop.checked){
+                    mealName=optLollipop.value;
+                    mealCost=300;
+                }
+                if(optBurgers.checked){
+                    addOnName=optBurgers.value + "<br>";
+                    addOnCost=50;
+                    mealCost= mealCost + addOnCost;
+                }
+                if(optFriess.checked){
+                    addOnName+=optFriess.value + "<br>";
+                    addOnCost=70;
+                    mealCost= mealCost + addOnCost;
+                }
+                if(optCoffees.checked){
+                    addOnName+=optCoffees.value + "<br>";
+                    addOnCost=80;
+                    mealCost= mealCost + addOnCost;
+                }
+                if(optLollipops.checked){
+                    addOnName+=optLollipops.value;
+                    addOnCost=40;
+                    mealCost= mealCost + addOnCost;
+                }
+
+                total= mealCost;
+
+                document.getElementById("lblName").innerHTML=customerName;
+                document.getElementById("lblMobile").innerHTML=mobileNumber;
+                document.getElementById("lblMeal").innerHTML=mealName;
+                document.getElementById("lblAddon").innerHTML=addOnName;
+                document.getElementById("lblTotal").innerHTML='&#8377;' +total;
+        }
+        function printing(){
+            window.print();
+        }
+    </script>
+</head>
+<body class="container" onload="f1()">
+    <div align="center" >
+        <h2 id="timer" class="btn  btn-danger"></h2>
+    </div>
+    <div class="accordian" id="kfcMenu">
+        <img src="area.jpg" width="100%" height="100%" alt="image">
+        <div class="card">
+            <div class="card-header" id="customerInfo">
+               <h2>
+                <button class="btn btn-danger" data-bs-target="#collapseCustomer" data-bs-toggle="collapse">Customer Info</button>
+               </h2>
+            </div>
+         <div class="collapse show" id="collapseCustomer" data-bs-parent="#kfcMenu">
+             <div class="card-body">
+                 <div class="row">
+                     <div class="col-6">
+                         <label for="">Name</label>
+                     </div>
+                     <div class="col-6">
+                         <input type="text" id="txtName" class="form-control">
+                     </div>
+                 </div>
+                 <div class="row">
+                    <div class="col-6">
+                        <label for="">Mobile No.</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" id="txtMobile" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Email Address</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="email" id="txtMail" class="form-control">
+                    </div>
+                </div>
+             </div>
+         </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="mealInfo">
+                <h2>
+                    <button class="btn btn-danger" data-bs-target="#collapseMeal" data-bs-toggle="collapse" >Meals</button>
+                </h2>
+            </div>
+            <div class="collapse" data-bs-parent="#kfcMenu" id="collapseMeal">
+                <div class="row">
+                    <div class="col-3 card">
+                        <img src="chicken-burger-recipe.jpg" alt="none" class="card-img-top" height="300px">
+                        <div class="card-body">
+                            <h2>BURGER</h2>
+                        </div>
+                        <div class="card-footer">
+                            <h2>
+                                <input type="radio" name="meal" value="BURGER" id="optBurger">&#8377; 150/-
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-3 card">
+                        <img src="french-fries-.jpg" alt="none" class="card-img-top" height="300px">
+                        <div class="card-body">
+                            <h2>FRENCH FRIES</h2>
+                        </div>
+                        <div class="card-footer">
+                            <h2>
+                                <input type="radio" name="meal" value="frenchfries" id="optFries">&#8377; 100/-
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-3 card">
+                        <img src="brownie.jpg" alt="none" class="card-img-top" height="300px">
+                        <div class="card-body">
+                            <h2>Cold Coffee</h2>
+                        </div>
+                        <div class="card-footer">
+                            <h2>
+                                <input type="radio" name="meal" value="coldcoffee" id="optCoffee">&#8377; 75/-
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-3 card">
+                        <img src="kfc.webp" alt="none" class="card-img-top" height="300px">
+                        <div class="card-body">
+                            <h2>chicken lollipop</h2>
+                        </div>
+                        <div class="card-footer">
+                            <h2>
+                                <input type="radio" name="meal" value="lollipop" id="optLollipop">&#8377; 300/-
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="addOnInfo">
+                <h2>
+                    <button class="btn btn-danger" data-bs-target="#collapseAddon" data-bs-toggle="collapse" >ADD ON</button>
+                </h2>
+            </div>
+            <div class="collapse" data-bs-parent="#kfcMenu" id="collapseAddon">
+                <div class="row">
+                    <div class="col-3 card">
+                        <img src="chicken-burger-recipe.jpg" alt="none" class="card-img-top" height="300px">
+                        <div class="card-body">
+                            <h2>BURGER</h2>
+                        </div>
+                        <div class="card-footer">
+                            <h2>
+                                <input type="checkbox"  value="BURGER" id="optBurgers">&#8377; 50/-
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-3 card">
+                        <img src="french-fries-.jpg" alt="none" class="card-img-top" height="300px">
+                        <div class="card-body">
+                            <h2>FRENCH FRIES</h2>
+                        </div>
+                        <div class="card-footer">
+                            <h2>
+                                <input type="checkbox" value="frenchfries" id="optFriess">&#8377; 70/-
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-3 card">
+                        <img src="brownie.jpg" alt="none" class="card-img-top" height="300px">
+                        <div class="card-body">
+                            <h2>Cold Coffee</h2>
+                        </div>
+                        <div class="card-footer">
+                            <h2>
+                                <input type="checkbox"  value="coldcoffee" id="optCoffees">&#8377; 80/-
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-3 card">
+                        <img src="kfc.webp" alt="none" class="card-img-top" height="300px">
+                        <div class="card-body">
+                            <h2>chicken lollipop</h2>
+                        </div>
+                        <div class="card-footer">
+                            <h2>
+                                <input type="checkbox"  value="lollipop" id="optLollipops">&#8377; 40/-
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group text-center">
+        
+            <button onclick="BillSummary()" class="btn btn-outline-danger text-center " data-bs-target="#summaryModal" data-bs-toggle="modal">Place Order</button>
+        
+    </div>
+    <div class="modal" id="summaryModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Bill Summary</h2>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>Customer Name</dt>
+                        <dd id="lblName"></dd>
+                        <dt>Mobile Number</dt>
+                        <dd id="lblMobile"></dd>
+                        <dt>Selected Meal</dt>
+                        <dd id="lblMeal"></dd>
+                        <dt>Add On</dt>
+                        <dd id="lblAddon"></dd>
+                        <dt>Total</dt>
+                        <dd id="lblTotal"></dd>
+
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-primary" onclick="printing()">Print</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

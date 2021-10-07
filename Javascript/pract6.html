@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function foo(){
+        //     var name="yaj aera tpircsavaj " ;
+        //     var revName= name.split('').reverse().join('');
+        //     var product={
+        //         mfd: new Date("2021-07-17")
+        //     }
+        //     var months=['January','February','March','April','May','June','July'];
+        //     var weekdays=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+        //     document.write(`Manufactured=${product.mfd}<br> Year=${product.mfd.getFullYear()}<br> month=${months[product.mfd.getMonth()]}<br> Day=${weekdays[product.mfd.getDay()]} <br>${revName}`);
+    
+        // }
+        // foo();
+        function GetTime(){
+            var now = new Date();
+            document.getElementById('timer').innerHTML=now.toLocaleTimeString();
+        }
+        function f1(){
+            setInterval(GetTime,1000)
+        }
+    </script>
+</head>
+<body onload="f1()">
+    <div align="center" id="timer"></div>
+    
+</body>
+</html>

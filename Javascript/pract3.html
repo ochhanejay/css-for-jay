@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script>
+        "use strict"
+        var product = ["er.jpg","pexels-photo-6012257.jpeg" , "pexels-photo-6146810.jpeg" , "pexels-photo-6171394.jpeg" , "ffff-min.jpg"]
+        var products = ["er.jpg","pexels-photo-6012257.jpeg" , "pexels-photo-6146810.jpeg" , "pexels-photo-6171394.jpeg" , "ffff-min.jpg"]
+        var count=0;
+        function changeImage(){
+            var data = document.getElementById("slider").value;
+            document.getElementById("pic").src= product[data];
+            count= parseInt(data);
+        }
+        function changeImageSecond(){
+            var data = document.getElementById("slider1").value;
+            document.getElementById("pic1").src= products[data];
+            count= parseInt(data);
+        }
+        function changeImageThird(){
+            var data = document.getElementById("slider2").value;
+            document.getElementById("pic2").src= products[data];
+            count= parseInt(data);
+        }
+        function bodyload(){
+            document.getElementById("pic").src= product[0];
+            document.getElementById("pic1").src= products[0];
+            document.getElementById("pic2").src= products[0];
+        }
+        function nextClick(){
+            if(count< product.length -1){
+                count=count+1;
+            }
+            document.getElementById('pic').src=product[count];;
+            document.getElementById('slider').value=count;
+            
+        }
+
+        function previousClick(){
+            if(count>0){
+                count = count - 1 ;
+            }
+            document.getElementById('pic').src=product[count];
+            document.getElementById('slider').value=count;
+           
+        }
+        function nextClick1(){
+            if(count< product.length -1){
+                count=count+1;
+            }
+            document.getElementById('pic1').src=products[count]
+            document.getElementById('slider1').value=count;
+        }
+
+        function previousClick1(){
+            if(count>0){
+                count = count - 1 ;
+            }
+            document.getElementById('pic1').src=products[count];
+            document.getElementById('slider1').value=count;
+        }
+        function nextClick2(){
+            if(count< product.length -1){
+                count=count+1;
+            }
+            document.getElementById('pic2').src=products[count]
+            document.getElementById('slider2').value=count;
+        }
+
+        function previousClick2(){
+            if(count>0){
+                count = count - 1 ;
+            }
+            document.getElementById('pic2').src=products[count];
+            document.getElementById('slider2').value=count;
+        }
+        function printing(){
+            window.print();
+        }
+    </script>
+</head>
+<body class="container" onload="bodyload()">
+    <div class="row">
+    <div class="card text-center col-4 offset-4">
+        <div class="card-header">
+            <h2>Image scroller</h2>
+        </div>
+        <div class="card-body">
+            <button onclick="previousClick()" class="btn btn-success">
+                <span class="fas fa-chevron-left"></span>
+            </button>
+            <img id="pic" width="300px" height="300px" alt="">
+            <button onclick="nextClick()" class="btn btn-success">
+                <span class="fas fa-chevron-right"></span>
+            </button>
+        </div>
+        <div class="card-footer">
+            <input onchange="changeImage()" type="range" min="0" max="4" value="0" id="slider">
+        </div>
+    </div>
+    <div class="card text-center col-4 offset-1">
+        <div class="card-header">
+            <h2>Image scroller</h2>
+        </div>
+        <div class="card-body">
+            <button onclick="previousClick1()" class="btn btn-success">
+                <span class="fas fa-chevron-left"></span>
+            </button>
+            <img id="pic1" width="300px" height="300px" alt="">
+            <button onclick="nextClick1()" class="btn btn-success">
+                <span class="fas fa-chevron-right"></span>
+            </button>
+        </div>
+        <div class="card-footer">
+            <input onchange="changeImageSecond()" type="range" min="0" max="4" value="0" id="slider1">
+        </div>
+    </div>
+    <div class="card col-4 offset-2 text-center">
+        <div class="card-header">
+            <h2>Image scroller</h2>
+        </div>
+        <div class="card-body">
+            <button onclick="previousClick2()" class="btn btn-success">
+                <span class="fas fa-chevron-left"></span>
+            </button>
+            <img id="pic2" width="300px" height="300px" alt="">
+            <button onclick="nextClick2()" class="btn btn-success">
+                <span class="fas fa-chevron-right"></span>
+            </button>
+        </div>
+        <div class="card-footer">
+            <input onchange="changeImageThird()" type="range" min="0" max="4" value="0" id="slider2">
+        </div>
+    </div>
+</div>
+
+    <button onclick="printing()" class="col-1 offset-5 btn btn-danger" style="margin-top: 50px; margin-left: 600px;">Print</button>
+</body>
+</html>

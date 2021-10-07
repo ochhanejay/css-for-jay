@@ -6,24 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devil Projects</title>
     <link rel="stylesheet" href="mainweb.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        function GetTime(){
+            var now = new Date();
+            document.getElementById('timer').innerHTML=now.toLocaleTimeString();
+        }
+        function f1(){
+            setInterval(GetTime,1000)
+        }
+    </script>
 </head>
-<body>
-    <div class="main_container">
-        <div class="container1">
+<body onload="f1()" class="container">
+    <div align="center" >
+        <h2 id="timer" class="btn  btn-danger"></h2>
+    </div> 
+    <div class="row">
+        <div class="col-8  text-success devil">
+            <h1>Dark Devil Projects</h1>
+        </div>
+        <div class="col-4  ">
             <img class="image1" src="https://giffiles.alphacoders.com/137/13754.gif" alt="">
         </div>
-        <div class="container">
-            <div class="cont1">
-                <h1>Dark Devil Projects</h1>
+    </div> 
+    <div class="accordian" id="tempMenu">
+        <div class="card col-md-3 col-sm-3">
+            <div class="card-header bg-dark" >
+                <h2>
+                    <button type="button" class="btn btn-lg btn-danger"  data-bs-target="#templateCollapse" data-bs-toggle="collapse">Templates</button>
+                </h2>
             </div>
-            <div class="cont2">
-                <a href="template1/index.html"> FOOD MENU</a>
-                <a href="template2/index.html">HOSPITAL MANAGEMENT</a>
-                <a href="template3/architect.html">ARCHITECT</a>
-                <a href="template5/consultation.html">CONSULTATION</a>
+            <div class="collapse  templateMenu " data-bs-parent="#tempMenu" id="templateCollapse" >
+                <h2 >
+                    <a class="text-light btn btn-danger" href="template1/index.html"> FOOD MENU</a>
+                </h2>
+                <h2>
+                    <a class="text-light btn btn-danger" href="template2/index.html">HOSPITAL MANAGEMENT</a>
+                </h2>
+                <h2><a class="text-light btn btn-danger" href="template3/architect.html">ARCHITECT</a></h2>
+                <h2><a class="text-light btn btn-danger" href="template5/consultation.html">CONSULTATION</a></h2>
             </div>
-        </div>
+            
     </div>
-    
 </body>
 </html>
