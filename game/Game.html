@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <title>Game</title>
+    <script>
+        
+        function bodyload(){
+            let score1 = document.getElementById('totalScore1');
+            let score2 = document.getElementById('totalScore2');
+            const dice = document.getElementById('diceImage');
+            const btnRoll= document.querySelector('.btn-roll');
+            const btnHold=document.querySelector('.btn-hold');
+            const btnNew=document.querySelector('.btn-new');
+            let bodygame= document.getElementById('bodyGame');
+
+            let currentScore=0;
+            let player1score= 0;
+            let player2score= 0;
+            let activeUser=1;
+            
+            score1.innerHTML=0;
+            score2.innerHTML=0;
+            
+            dice.style.display='none';
+        btnRoll.addEventListener("click",function(){
+                const diceNumber= Math.trunc((Math.random()*6)+1);
+                dice.style.display='block';
+                dice.src=`${diceNumber}.png`;
+                if(activeUser==1){
+                    player1score = player1score + diceNumber;
+                }
+                else{
+                    player2score = player2score + diceNumber;
+                }
+                if(diceNumber === 1){
+                    document.getElementById(`currentScore${activeUser}`).innerHTML=0;
+                    currentScore=0;
+                    if(activeUser==1){
+                        player1score=0;
+                    }
+                    else{
+                        player2score=0;
+                    }
+                    document.querySelector(`.card${activeUser}`).classList.remove('activePlayer') ;
+                    
+                    activeUser=activeUser===1 ? 2:1;
+                    document.querySelector(`.card${activeUser}`).classList.add('activePlayer') ;
+                }
+                else{
+                   currentScore=currentScore+diceNumber;
+                   document.getElementById(`currentScore${activeUser}`).innerHTML=currentScore;
+                }
+                if(player1score>=10){
+                    document.querySelector('.card1').classList.add('cardCare') ;
+                    bodygame.style.backgroundImage='linear-gradient(black,black,black)';
+                    document.getElementById("btnRoll").disabled = true;
+                    document.getElementById("btnHold").disabled = true;
+            
+        }
+        else if(player2score>=10){
+                    document.querySelector('.card2').classList.add('cardCare') ;
+                    bodygame.style.backgroundImage='linear-gradient(black,black,black)';
+                    document.getElementById("btnRoll").disabled = true;
+                    document.getElementById("btnHold").disabled = true;
+            
+            
+        }
+            });
+
+        btnHold.addEventListener("click",function(){
+            document.getElementById(`currentScore${activeUser}`).innerHTML=0;
+            if(activeUser===1){
+                document.getElementById('totalScore1').innerHTML=player1score;
+            }
+            else{
+                document.getElementById('totalScore2').innerHTML=player2score;
+            }
+            document.querySelector(`.card${activeUser}`).classList.remove('activePlayer') ;
+                    
+                    activeUser=activeUser===1 ? 2:1;
+                    document.querySelector(`.card${activeUser}`).classList.add('activePlayer') ;
+            currentScore=0;
+            
+        }) ;
+        
+        btnNew.addEventListener("click",function(){
+            document.getElementById('currentScore1').innerHTML=0;
+            document.getElementById('currentScore2').innerHTML=0;
+            document.getElementById('totalScore1').innerHTML=0;
+            document.getElementById('totalScore2').innerHTML=0;
+            player1score=0;
+            player2score=0;
+            currentScore=0;
+            activeUser=1;
+            dice.style.display='none';
+            bodygame.style.backgroundImage='linear-gradient(#CD113B,orange,#CD113B)'
+            document.querySelector('.card1').classList.remove('cardCare') ;
+            document.querySelector('.card2').classList.remove('cardCare') ;
+            document.querySelector('.card1').classList.add('activePlayer') ;
+            document.querySelector('.card2').classList.remove('activePlayer') ;
+            document.getElementById("btnRoll").disabled = false;
+            document.getElementById("btnHold").disabled = false;
+        });
+
+        }
+      
+    </script>
+</head>
+<body id="bodyGame" class="container-fluid" onload="bodyload()">
+    <div class="row" style="margin-top: 10%;  ">
+        <div name="data1" class="col-3 offset-3 card text-center card1 activePlayer" id="player1">
+            <div class="card-header">
+                <h3>PLAYER 1</h3>
+            </div>
+            <div class="card-body">
+                
+                <h1 style="color: darkcyan; font-size: 4rem" id="totalScore1">25</h1>
+            </div>
+            <div class="card-footer cardHead2">
+                <h5 >CURRENT</h5>
+                <h3 id="currentScore1">0</h3>
+            </div>
+        </div>
+        <div name="data2" class="col-3 card text-center card2" id="player2">
+            
+             <div class="card-header" >
+                 
+                <h3>PLAYER 2</h3>
+            </div>
+            <div class="card-body">
+                
+                <h1 style="color: darkcyan; font-size: 4rem" id="totalScore2">40</h1>
+            </div>
+            <div class="card-footer cardHead2">
+                <h5 >CURRENT</h5>
+                <h3 id="currentScore2">0</h3>
+            </div>
+        </div>
+
+    </div>
+    <button class="btn btn-new" >
+        <i style="color: darkcyan;" class="bi bi-joystick"></i>NEW GAME</button>
+        <img id="diceImage" src="6.png" alt="">
+    <button class="btn btn-roll" id="btnRoll" >
+        <i style="color: red;" class="bi bi-dice-2"></i>Roll Dice</button>
+    <button class="btn btn-hold" id="btnHold" ><i class="bi bi-pause-circle"></i>HOLD</button>
+    
+    
+</body>
+</html>
